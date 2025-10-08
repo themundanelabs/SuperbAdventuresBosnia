@@ -247,7 +247,7 @@ const Scene3D = ({ timeOverride }) => {
         <Mountain position={[4, -1, -15]} scale={[2.8, 4.5, 2.8]} color={theme.mountainColors[1]} />
         
         {/* Floating particles */}
-        <Particles theme={timeOfDay} />
+        <Particles theme={actualTime} />
         
         {/* Ground plane */}
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]}>
