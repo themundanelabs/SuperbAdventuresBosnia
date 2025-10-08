@@ -1,6 +1,6 @@
 import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Stars, Float, Sphere } from '@react-three/drei';
+import { OrbitControls, Stars, Float } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Get time-based theme
