@@ -234,10 +234,10 @@ const Scene3D = ({ timeOverride }) => {
         )}
         
         {/* Sun/Moon */}
-        <CelestialBody theme={timeOfDay} />
+        <CelestialBody theme={actualTime} />
         
         {/* Birds for morning/noon */}
-        <Birds theme={timeOfDay} />
+        <Birds theme={actualTime} />
         
         {/* Mountains with theme colors */}
         <Mountain position={[-3, -1, -5]} scale={[2, 3, 2]} color={theme.mountainColors[0]} />
