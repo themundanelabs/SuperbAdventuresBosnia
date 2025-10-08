@@ -14,22 +14,35 @@ const Gallery = () => {
     : galleryImages.filter(img => img.category === filter);
 
   return (
-    <section id="gallery" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24">
+      {/* Page Header */}
+      <section className="bg-gradient-to-br from-emerald-700 via-emerald-800 to-emerald-900 text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full filter blur-3xl" />
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-orange-400 rounded-full filter blur-3xl" />
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Adventure Gallery</h1>
+            <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
+              Capturing memorable moments from our tours across Bosnia & Herzegovina
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-6 py-12">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Adventure <span className="text-emerald-700">Gallery</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Capturing memorable moments from our tours
-          </p>
-        </motion.div>
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
