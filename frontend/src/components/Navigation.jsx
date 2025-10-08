@@ -38,6 +38,7 @@ const Navigation = () => {
               <Link
                 key={link.name}
                 to={link.path}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className={`font-medium transition-all duration-300 hover:scale-105 ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-emerald-600' 
