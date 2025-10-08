@@ -13,8 +13,9 @@ function getTimeOfDay() {
   return 'night';
 }
 
-const Hero = () => {
+const Hero = ({ timeOverride }) => {
   const [timeOfDay, setTimeOfDay] = useState(getTimeOfDay());
+  const actualTime = timeOverride || timeOfDay;
 
   useEffect(() => {
     const interval = setInterval(() => {
