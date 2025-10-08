@@ -160,8 +160,6 @@ function Particles({ theme }) {
 function Birds({ theme }) {
   const birdsRef = useRef();
   
-  if (theme !== 'morning' && theme !== 'noon') return null;
-
   const birds = useMemo(() => {
     const temp = [];
     for (let i = 0; i < 5; i++) {
@@ -174,13 +172,16 @@ function Birds({ theme }) {
   }, []);
 
   useFrame((state) => {
-    if (birdsRef.current) {
+    if (birdsRef.current && (theme === 'morning' || theme === 'noon')) {
       birdsRef.current.children.forEach((bird, i) => {
         bird.position.x = Math.sin(state.clock.elapsedTime * birds[i].speed) * 15;
         bird.position.z = -15 + Math.cos(state.clock.elapsedTime * birds[i].speed * 0.5) * 10;
       });
     }
   });
+
+  // Only render birds for morning and noon
+  if (theme !== 'morning' && theme !== 'noon') return null;
 
   return (
     <group ref={birdsRef}>
