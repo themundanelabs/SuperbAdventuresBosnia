@@ -74,9 +74,15 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="mb-6"
+              className="mb-6 space-y-4"
             >
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full mb-8">
+              {/* Time of day indicator */}
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full">
+                <TimeIcon className="text-orange-400" size={20} />
+                <span className="text-white font-medium text-sm">{currentTheme.text}</span>
+              </div>
+              
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full">
                 <Mountain className="text-orange-400" size={24} />
                 <span className="text-white font-medium">10+ Years of Adventure Excellence</span>
               </div>
