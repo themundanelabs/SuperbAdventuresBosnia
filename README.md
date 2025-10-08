@@ -7,9 +7,36 @@ A visually striking, modern redesign of the Super B Adventures website featuring
 ### 🎨 Design Highlights
 - **Earth tone color palette** with vibrant orange accents
 - **Glassmorphism effects** with backdrop blur
-- **3D animated hero section** using Three.js
+- **3D animated hero section** using Three.js with **dynamic time-based themes**
 - **Smooth animations** with Framer Motion
 - **Fully responsive** design for all devices
+
+### 🌅 Dynamic Time-Based 3D Scenes
+The website automatically detects the viewer's local time and adapts the 3D environment:
+
+**Morning (6am-12pm):**
+- ☀️ Golden sunrise with light blue sky
+- 🌄 Green mountains with morning light
+- 🐦 Animated birds flying
+- ✨ Golden particles
+
+**Noon (12pm-6pm):**
+- ☀️ Bright yellow sun overhead  
+- 💙 Clear blue sky
+- 🏔️ Vibrant green mountains
+- 🐦 Active bird animations
+
+**Evening (6pm-9pm):**
+- 🌅 Orange sunset with dramatic colors
+- 🏔️ Darker mountain silhouettes
+- ✨ Orange-tinted particles
+- 🌆 Warm atmospheric glow
+
+**Night (9pm-6am):**
+- 🌙 Moon and starry sky
+- ⭐ 5000+ twinkling stars
+- 🏔️ Dark mountain shadows
+- ✨ Mystical white particles
 
 ### 🏔️ Sections
 
