@@ -89,7 +89,7 @@ const Gallery = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Lightbox */}
         {selectedImage && (
