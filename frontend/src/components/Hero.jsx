@@ -55,13 +55,13 @@ const Hero = ({ timeOverride }) => {
     }
   };
 
-  const currentTheme = timeThemes[timeOfDay];
+  const currentTheme = timeThemes[actualTime];
   const TimeIcon = currentTheme.icon;
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* 3D Background */}
-      <Scene3D />
+      <Scene3D timeOverride={timeOverride} />
       
       {/* Time-based overlay for better text readability */}
       <div className={`absolute inset-0 bg-gradient-to-b ${currentTheme.gradient} z-10`} />
