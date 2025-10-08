@@ -18,6 +18,8 @@ export const navigationLinks = [
   { name: "Home", path: "/" },
   { name: "Our Tours", path: "/tours" },
   { name: "About Us", path: "/about" },
+  { name: "Videos", path: "/videos" },
+  { name: "Blog", path: "/blog" },
   { name: "Gallery", path: "/gallery" },
   { name: "Contact", path: "/contact" }
 ];
