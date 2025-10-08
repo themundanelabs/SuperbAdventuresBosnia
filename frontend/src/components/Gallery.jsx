@@ -117,7 +117,7 @@ const Gallery = () => {
           </motion.div>
         )}
       </div>
-    </section>
+    </div>
   );
 };
 
