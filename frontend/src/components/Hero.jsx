@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Mountain } from 'lucide-react';
+import { ArrowRight, Mountain, Sun, Moon, Cloud, Sunrise } from 'lucide-react';
 import Scene3D from './Scene3D';
 import { heroContent } from '../data/mock';
 
+// Get time of day
+function getTimeOfDay() {
+  const hour = new Date().getHours();
+  if (hour >= 6 && hour < 12) return 'morning';
+  if (hour >= 12 && hour < 18) return 'noon';
+  if (hour >= 18 && hour < 21) return 'evening';
+  return 'night';
+}
+
 const Hero = () => {
+  const [timeOfDay, setTimeOfDay] = useState(getTimeOfDay());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeOfDay(getTimeOfDay());
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToTours = () => {
     const toursSection = document.getElementById('tours');
     if (toursSection) {
@@ -12,13 +30,41 @@ const Hero = () => {
     }
   };
 
+  // Theme-based overlays and icons
+  const timeThemes = {
+    morning: {
+      gradient: 'from-blue-200/20 via-orange-200/10 to-transparent',
+      icon: Sunrise,
+      text: 'Good Morning! Start Your Adventure'
+    },
+    noon: {
+      gradient: 'from-blue-100/10 via-transparent to-transparent',
+      icon: Sun,
+      text: 'Beautiful Day for Adventure'
+    },
+    evening: {
+      gradient: 'from-orange-300/20 via-purple-200/10 to-transparent',
+      icon: Cloud,
+      text: 'Evening Adventures Await'
+    },
+    night: {
+      gradient: 'from-indigo-950/40 via-indigo-900/30 to-transparent',
+      icon: Moon,
+      text: 'Dream of Tomorrow\'s Adventure'
+    }
+  };
+
+  const currentTheme = timeThemes[timeOfDay];
+  const TimeIcon = currentTheme.icon;
+
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-800">
+    <section className="relative h-screen w-full overflow-hidden">
       {/* 3D Background */}
       <Scene3D />
       
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/30 z-10" />
+      {/* Time-based overlay for better text readability */}
+      <div className={`absolute inset-0 bg-gradient-to-b ${currentTheme.gradient} z-10`} />
+      <div className="absolute inset-0 bg-black/20 z-10" />
       
       {/* Content */}
       <div className="relative z-20 h-full flex items-center justify-center">
