@@ -195,9 +195,10 @@ function Birds({ theme }) {
 }
 
 // Main 3D Scene
-const Scene3D = () => {
+const Scene3D = ({ timeOverride }) => {
   const [timeOfDay, setTimeOfDay] = useState(getTimeOfDay());
-  const theme = themes[timeOfDay];
+  const actualTime = timeOverride || timeOfDay;
+  const theme = themes[actualTime];
 
   // Update time every minute
   useEffect(() => {
